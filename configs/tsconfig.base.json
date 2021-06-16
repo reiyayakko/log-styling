@@ -1,0 +1,19 @@
+{
+    // https://www.typescriptlang.org/ja/tsconfig
+    "compilerOptions": {
+        // module
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "baseUrl": "../src",
+        // types
+        "lib": ["ES2018"],
+        "strict": true,
+        // "noUncheckedIndexedAccess": true,
+        // lint
+        "allowUnreachableCode": false,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitReturns": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+    }
+}
