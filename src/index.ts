@@ -25,8 +25,17 @@ export class LogStyling {
     static int(int: number, digit = 0) {
         return new LogStyling(`%.${digit | 0}i`, int);
     }
+    /**
+     * Use `optimally useful formatting` to display the log.
+     */
     static object(object: unknown) {
         return new LogStyling("%o", object);
+    }
+    /**
+     * Use `generic JavaScript object formatting` to display the log.
+     */
+    static generic(object: unknown) {
+        return new LogStyling("%O", object);
     }
     /**
      * Applies the style to the letters displayed on the console.
