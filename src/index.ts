@@ -9,7 +9,9 @@ const concat = <T>(accum: T[], val: T | ConcatArray<T>): T[] => accum.concat(val
 export class LogStyling {
     protected constructor(protected msg: string, protected sub: unknown) {}
     private static _fit(stylingable: LogStylingOrString): LogStyling {
-        return typeof stylingable === "string" ? LogStyling.string(stylingable) : stylingable
+        return stylingable instanceof LogStyling
+            ? stylingable
+            : LogStyling.string(stylingable)
     }
     protected static fitLogStylingArray(loggable: Loggable): LogStyling[] {
         return Array.isArray(loggable)
