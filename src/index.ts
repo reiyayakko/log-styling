@@ -2,7 +2,9 @@
 type LogArgs = [text: string, ...subs: unknown[]];
 
 type LogStylingOrString = string | LogStyling;
-type Loggable = LogStylingOrString | LogStylingOrString[];
+type Loggable = LogStylingOrString | (LogStylingOrString | LogStylingOrString[])[];
+
+const concat = <T>(accum: T[], val: T | ConcatArray<T>): T[] => accum.concat(val);
 
 export class LogStyling {
     protected constructor(protected msg: string, protected sub: unknown) {}
@@ -11,7 +13,7 @@ export class LogStyling {
     }
     protected static fitLogStylingArray(loggable: Loggable): LogStyling[] {
         return Array.isArray(loggable)
-            ? loggable.map(LogStyling._fit)
+            ? loggable.reduce<LogStylingOrString[]>(concat, []).map(LogStyling._fit)
             : [LogStyling._fit(loggable)];
     }
     static string(string: string) {
