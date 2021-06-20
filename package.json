@@ -1,0 +1,40 @@
+{
+  "name": "log-styling",
+  "version": "1.0.0",
+  "description": "Tiny utility for formatting console output.",
+  "main": "dist/log-styling.umd.js",
+  "unpkg": "dist/log-styling.umd.js",
+  "module": "dist/log-styling.es.js",
+  "types": "dist/log-styling.es.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "watch": "rollup -c rollup.config.js -w",
+    "build": "rollup -c rollup.config.js",
+    "docs": "typedoc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reiyayakko/log-styling.git"
+  },
+  "author": "reiyayakko <reiyayakko@gmail.com> (https://github.com/reiyayakko)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/reiyayakko/log-styling/issues"
+  },
+  "homepage": "https://github.com/reiyayakko/log-styling#readme",
+  "keywords": [
+    "console",
+    "log",
+    "style",
+    "format",
+    "browser",
+    "node"
+  ],
+  "devDependencies": {
+    "@wessberg/rollup-plugin-ts": "^1.3.14",
+    "rollup": "^2.52.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "typedoc": "^0.21.0",
+    "typescript": "^4.3.4"
+  }
+}
