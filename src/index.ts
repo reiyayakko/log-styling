@@ -1,5 +1,5 @@
 
-type LogArgs = [text: string, ...subs: unknown[]];
+type LogArgs = [string, ...unknown[]];
 
 type LogStylingOrString = string | LogStyling;
 type Loggable = LogStylingOrString | (LogStylingOrString | LogStylingOrString[])[];
@@ -18,29 +18,39 @@ export class LogStyling {
             ? loggable.reduce<LogStylingOrString[]>(concat, []).map(LogStyling._fit)
             : [LogStyling._fit(loggable)];
     }
+    /**
+     * Outputs a string.
+     */
     static string(string: string) {
         return new LogStyling("%s", string);
     }
+    /**
+     * Outputs a floating point number.
+     */
     static float(float: number, digit = 0) {
         return new LogStyling(`%.${digit | 0}f`, float);
     }
+    /**
+     * Outputs an integer.
+     */
     static int(int: number, digit = 0) {
         return new LogStyling(`%.${digit | 0}i`, int);
     }
     /**
-     * Use `optimally useful formatting` to display the log.
+     * Output the log using `optimally useful formatting`.
      */
     static object(object: unknown) {
         return new LogStyling("%o", object);
     }
     /**
-     * Use `generic JavaScript object formatting` to display the log.
+     * Output the log using `generic JavaScript object formatting`.
      */
     static generic(object: unknown) {
         return new LogStyling("%O", object);
     }
     /**
-     * Applies the style to the letters displayed on the console.
+     * Applies the style to the letters output to the console.
+     * Styles previously applied in `LogStyling.style` will be invalid.
      * @param css The style to be applied.
      * @see https://developer.mozilla.org/docs/Web/API/console#styling_console_output
      */
@@ -48,10 +58,12 @@ export class LogStyling {
         return new LogStyling("%c", css);
     }
     /**
-     * Resets the style specified in `LogStyling.style`.
-     * @see {@link LogStyling.style}
+     * Resets the style specified in {@link LogStyling.style}.
      */
     static readonly resetStyle = LogStyling.style("");
+    /**
+     * Apply the style to the inner log.
+     */
     static styled(css: string, loggable: Loggable): LogStyling[] {
         return [
             LogStyling.style(css),
