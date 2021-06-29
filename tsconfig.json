@@ -8,7 +8,7 @@
         "esModuleInterop": true,
         "baseUrl": "./src",
         // types
-        "lib": ["ES2018"],
+        "lib": ["ES2019"],
         "typeRoots": [],
         "strict": true,
         // lint

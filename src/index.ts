@@ -1,8 +1,6 @@
 
 type LogElementOrString = string | LogElement;
-type LogNode = LogElementOrString | (LogElementOrString | LogElementOrString[])[];
-
-const concat = <T>(arr: T[], carr: T | ConcatArray<T>): T[] => arr.concat(carr);
+type LogNode = LogElementOrString | LogNode[];
 
 export class LogElement {
     constructor(readonly msg: string, readonly sub: unknown) {}
@@ -13,7 +11,7 @@ export class LogElement {
     }
     static fitLogElements(logNode: LogNode): LogElement[] {
         return Array.isArray(logNode)
-            ? logNode.reduce<LogElementOrString[]>(concat, []).map(LogElement._fit)
+            ? logNode.flatMap(LogElement.fitLogElements)
             : [LogElement._fit(logNode)];
     }
     static toLog(logNode: LogNode): LogArgs {
