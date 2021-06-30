@@ -60,15 +60,13 @@ export const resetStyle = style("");
 /**
  * Apply the style to the inner log.
  */
-export const styled = (css: string, logNode: LogNode): LogElement[] => {
-    return [
-        style(css),
-        ...LogElement.fitLogElements(logNode).map(logEl =>
-            logEl.msg === "%c" ? style(css + ";" + logEl.sub) : logEl
-        ),
-        resetStyle,
-    ];
-};
+export const styled = (css: string, logNode: LogNode): LogElement[] => [
+    style(css),
+    ...LogElement.fitLogElements(logNode).map(logEl =>
+        logEl.msg === "%c" ? style(css + ";" + logEl.sub) : logEl
+    ),
+    resetStyle,
+];
 
 type LogArgs = [string, ...unknown[]];
 
