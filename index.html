@@ -76,6 +76,8 @@
 <span style="color: #A31515">    text-decoration: underline;</span>
 <span style="color: #A31515">`</span><span style="color: #000000">, </span><span style="color: #A31515">`# </span><span style="color: #0000FF">${</span><span style="color: #001080">text</span><span style="color: #0000FF">}</span><span style="color: #EE0000">\n</span><span style="color: #A31515">`</span><span style="color: #000000">);</span>
 
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #795E26">bold</span><span style="color: #000000"> = (</span><span style="color: #001080">text</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #795E26">styled</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;font-weight: bold&quot;</span><span style="color: #000000">, </span><span style="color: #001080">text</span><span style="color: #000000">);</span>
+
 <span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #001080">log</span><span style="color: #000000">, [</span>
 <span style="color: #000000">    </span><span style="color: #795E26">heading</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;Styled text (styles can be nested)&quot;</span><span style="color: #000000">),</span>
 <span style="color: #000000">    </span><span style="color: #795E26">styled</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;color: lightgreen&quot;</span><span style="color: #000000">, [</span>
@@ -86,7 +88,7 @@
 <span style="color: #000000">        </span><span style="color: #A31515">&quot;Lightgreen letters on a black background.</span><span style="color: #EE0000">\n</span><span style="color: #A31515">&quot;</span><span style="color: #000000">,</span>
 <span style="color: #000000">        </span><span style="color: #001080">resetStyle</span><span style="color: #000000">,</span>
 <span style="color: #000000">        </span><span style="color: #A31515">&quot;Lightgreen letters.</span><span style="color: #EE0000">\n</span><span style="color: #A31515">&quot;</span><span style="color: #000000">,</span>
-<span style="color: #000000">        </span><span style="color: #795E26">styled</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;font-weight: bold&quot;</span><span style="color: #000000">, </span><span style="color: #A31515">&quot;Bold lightgreen letters.</span><span style="color: #EE0000">\n</span><span style="color: #A31515">&quot;</span><span style="color: #000000">),</span>
+<span style="color: #000000">        </span><span style="color: #795E26">bold</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;Bold lightgreen letters.</span><span style="color: #EE0000">\n</span><span style="color: #A31515">&quot;</span><span style="color: #000000">),</span>
 <span style="color: #000000">    ]),</span>
 <span style="color: #000000">    </span><span style="color: #A31515">&quot;Unstyled letters.&quot;</span><span style="color: #000000">,</span>
 <span style="color: #000000">    </span><span style="color: #795E26">heading</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;Any values&quot;</span><span style="color: #000000">),</span>
