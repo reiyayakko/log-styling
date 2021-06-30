@@ -22,6 +22,8 @@ const heading = (text) => styled(`
     text-decoration: underline;
 `, `# ${text}\n`);
 
+const bold = (text) => styled("font-weight: bold", text);
+
 log(console.log, [
     heading("Styled text (styles can be nested)"),
     styled("color: lightgreen", [
@@ -32,7 +34,7 @@ log(console.log, [
         "Lightgreen letters on a black background.\n",
         resetStyle,
         "Lightgreen letters.\n",
-        styled("font-weight: bold", "Bold lightgreen letters.\n"),
+        bold("Bold lightgreen letters.\n"),
     ]),
     "Unstyled letters.",
     heading("Any values"),
