@@ -1,12 +1,14 @@
 {
   "name": "log-styling",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Tiny utility for formatting console output.",
   "main": "dist/log-styling.umd.js",
   "unpkg": "dist/log-styling.umd.js",
   "module": "dist/log-styling.es.js",
   "types": "dist/log-styling.es.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "watch": "rollup -c rollup.config.js -w",
     "build": "rollup -c rollup.config.js",
