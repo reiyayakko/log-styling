@@ -1,18 +1,15 @@
 
-type LogElementOrString = string | LogElement;
-type LogNode = LogElementOrString | LogNode[];
+type LogNode = string | LogElement | LogNode[];
 
 export class LogElement {
     constructor(readonly msg: string, readonly sub: unknown) {}
-    private static _fit(logNode: LogElementOrString): LogElement {
-        return logNode instanceof LogElement
-            ? logNode
-            : string(logNode)
-    }
     static fitLogElements(logNode: LogNode): LogElement[] {
         return Array.isArray(logNode)
             ? logNode.flatMap(LogElement.fitLogElements)
-            : [LogElement._fit(logNode)];
+            : [logNode instanceof LogElement
+                ? logNode
+                : string(logNode)
+            ];
     }
     static toLog(logNode: LogNode): LogArgs {
         const elements = LogElement.fitLogElements(logNode);
