@@ -1,5 +1,5 @@
 
-type LogNode = string | LogElement | LogNode[];
+export type LogNode = string | LogElement | LogNode[];
 
 export class LogElement {
     constructor(readonly msg: string, readonly sub: unknown) {}
