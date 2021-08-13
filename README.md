@@ -9,7 +9,7 @@ Tiny utility for formatting console output.
 
 It provides an easier-to-use interface than the printf-like console.log.
 
-See also <https://reiyayakko.github.io/log-styling>.
+See also <https://rizzzse.github.io/log-styling>.
 
 ## example
 

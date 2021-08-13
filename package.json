@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/reiyayakko/log-styling.git"
+    "url": "git+https://github.com/rizzzse/log-styling.git"
   },
-  "author": "reiyayakko <reiyayakko@gmail.com> (https://github.com/reiyayakko)",
+  "author": "rizzzse <rizzzse@gmail.com> (https://github.com/rizzzse)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/reiyayakko/log-styling/issues"
+    "url": "https://github.com/rizzzse/log-styling/issues"
   },
-  "homepage": "https://github.com/reiyayakko/log-styling#readme",
+  "homepage": "https://github.com/rizzzse/log-styling#readme",
   "keywords": [
     "console",
     "log",

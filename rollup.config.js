@@ -10,7 +10,7 @@ const banner = `
 /**
  * @license
  * ${pkg.name} v${pkg.version}
- * Copyright 2021 reiyayakko
+ * Copyright 2021 rizzzse
  * License MIT
  */`.slice(1);
 
